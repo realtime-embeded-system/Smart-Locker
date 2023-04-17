@@ -6,7 +6,7 @@ UI
 The main function achieved by the UI is to provide a platform for the user to operate the system. The main functions are login and logout, face entry, face recognition, locker selection and switching lockers on and off.
 
 The UI design interface is shown in the figure.
-
+![image](https://github.com/realtime-embeded-system/Smart-Locker/blob/main/image/1.jpg)
 The three folders in the UI folder are: code, code 2.0, code 3.0.
 
 code and code 2.0 only implement the functional UI design interface and do not communicate with the Raspberry Pi. The code is a Windows based QT program and needs to be cross-compiled to Linux before being ported to Raspberry Pi.
