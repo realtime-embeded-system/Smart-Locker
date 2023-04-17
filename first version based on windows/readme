@@ -1,1 +1,3 @@
+This is a verification program running on Windows systems, aimed at verifying the possibility of using opencv to achieve face recognition function. Due to the difficulty of cross compiling between Windows and Linux systems, this route has been abandoned.
+
 
