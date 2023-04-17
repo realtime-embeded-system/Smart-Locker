@@ -30,5 +30,4 @@ The facial recognition function is based on the open-source face recognition eng
 # Face Detection Module
 
 This repository contains the face detection module developed by Liu Jiarui as part of a collaborative GitHub project. The primary functionality of this module is to frame out faces from sampled photos.
-笔记
 
