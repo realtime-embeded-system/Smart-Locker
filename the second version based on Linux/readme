@@ -1,1 +1,1 @@
-
+This is a verification program that uses OpenCV to implement face recognition function on the Raspberry Pi platform. It failed multiple times during the compilation process and the final result was not ideal, so it has been abandoned.
