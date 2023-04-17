@@ -3,6 +3,9 @@ Smart lockers based on face recognition
 
 The whole project has three main parts: 
      the software part for face recognition and UI design, and the hardware part for circuit design and box assembly.
+     
+ For a video demonstration, please visit our youtube account.(https://youtu.be/tpFT4W4TO1w)
+ 
 # UI
 UI part is completed by Yuyang Peng(2429326p)
 
@@ -17,7 +20,7 @@ Power supply design and testing in the overall peripheral circuit design, and us
 Use an 8V power supply to reduce voltage and supply power to the Raspberry Pi and relay module, a 12V power supply to supply power to the latch, and the 24, 25, 27, and 28 IO ports of the Raspberry Pi generate 3.3V voltage to input signals to the four relay modules. The relay shares ground with the Raspberry Pi. When facial recognition is successful, the relay module operates and the 12V power supply begins to supply power to the locker.
 
 # face recognition
-The face recognition function is based on the open-source face recognition engine "seeta" and combined with the QT page to achieve the following three functions:
+The facial recognition function is based on the open-source face recognition engine "seeta" and combined with the QT page to achieve the following three functions:
 
 1. Face recognition: Identify faces and output corresponding numbers or names.
 
