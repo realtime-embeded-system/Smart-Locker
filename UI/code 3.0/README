@@ -1,0 +1,3 @@
+This version of the UI code contains the code to control the Raspberry Pi ports. 
+Communication with the Raspberry Pi is possible. 
+The face recognition door opening and closing function has been largely implemented.
