@@ -2,6 +2,7 @@
 Smart lockers based on face recognition
 
 UI
+
 The main function achieved by the UI is to provide a platform for the user to operate the system. The main functions are login and logout, face entry, face recognition, locker selection and switching lockers on and off.
 
 The UI design interface is shown in the figure.
