@@ -1,5 +1,7 @@
 This is the final version. The program mainly consists of three parts: QT interface, face recognition program, and interface calling program. The interactive interface implemented using QT, the Raspberry Pi GPIO called using wiringpi, and the face recognition function based on the open source face recognition engine "seeta". The program implements the functions of face input, face recognition, and unlocking specific boxes based on the results of face recognition.
 
+Note : Seeta_ fr_ The v1.0 file is too large to be directly uploaded to GitHub, so it is divided into six compressed files from part1 to part6. Before use, it should be decompressed first.
+
 Face recognition process:
 
 1. Open the main interface of the program.
