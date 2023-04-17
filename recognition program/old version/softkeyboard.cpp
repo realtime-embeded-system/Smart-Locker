@@ -1,15 +1,4 @@
-/****************************************************************************
-*
-* Copyright (C) 2016-2020 MiaoQingrui. All rights reserved.
-* Author: 缪庆瑞 <justdoit_mqr@163.com>
-*
-****************************************************************************/
-/*
- *@author: 缪庆瑞
- *@date:   2016.12.25
- *@update:  2020.05.09
- *@brief:  软键盘部件，实现中英文输入
- */
+
 #include "softkeyboard.h"
 #include <QBoxLayout>
 #include <QDebug>
