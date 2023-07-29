@@ -1,1 +1,0 @@
-This program is the initial version based on the Seeta face recognition engine, which has a large number of defects and cannot run stably. Missing calling program for Raspberry Pi GPIO interface.

@@ -1,1 +1,0 @@
-This is the second version of the program based on the Seeta engine, which can run stably on the Raspberry Pi platform and achieve facial recognition and input functions. We need to add a program that calls the Raspberry Pi GPIO interface, and according to the user group, we need to change the Chinese interface to English interface.
