@@ -5,6 +5,8 @@
 #include <opencv2/opencv.hpp>
 #include <QProcess>
 
+#include "facerc.h"
+
 namespace Ui {
 class MainWindow;
 }
@@ -36,12 +38,15 @@ private slots:
     void on_pushButton_2_clicked();
 
 //    void on_pushButton_cameraTime_clicked();
+    // void on_faceRC_detected(QString);
 
+    void on_faceRC_trained();
 private:
     Ui::MainWindow *ui;
     cv::Mat img;
 
     QProcess * m_process;
+    FaceRC * faceRC;
 };
 
 #endif // MAINWINDOW_H

@@ -17,7 +17,7 @@ class FaceRC:public QObject{
 Q_OBJECT
 
 public:
-    FaceRC(std::string index_path){
+    FaceRC(){
         fr = std::make_shared<FaceRecognition>();
         if (access("feature.index", F_OK ) != -1)
             fg = std::make_shared<FeatureGroup>("feature.index", fr);
@@ -43,7 +43,7 @@ public:
         fg->SaveModel("feature.index");
     }
 
-    void detect(cv::Mat & imgDetect){
+    std::string detect(cv::Mat & imgDetect){
         float **feat;
 
         feat = new float*[100];
@@ -94,9 +94,13 @@ public:
         }
 
         //TODO:emit信号
+        // emit detected(name);
+        return name;
         //cv::imshow("DetectImage", img);
     }
-    
+signals:
+    void detected(QString name);
+    void trained();
 private:
     std::shared_ptr<FaceRecognition> fr;
     std::shared_ptr<FeatureGroup> fg;
