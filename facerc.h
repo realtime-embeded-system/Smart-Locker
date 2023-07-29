@@ -10,13 +10,19 @@
 
 #include <opencv2/opencv.hpp>
 
+
+#include <unistd.h>
+
 class FaceRC:public QObject{
 Q_OBJECT
 
 public:
     FaceRC(std::string index_path){
         fr = std::make_shared<FaceRecognition>();
-        fg = std::make_shared<FeatureGroup>((fr->GetFeatureDims(), fr));
+        if (access("feature.index", F_OK ) != -1)
+            fg = std::make_shared<FeatureGroup>("feature.index", fr);
+        else
+            fg = std::make_shared<FeatureGroup>(fr.GetFeatureDims(), fr);
     }
     void train(const std::vector<std::string> filenames){
         float **feat;
@@ -34,7 +40,7 @@ public:
             }
         }
 
-        fg.SaveModel("feature.index");
+        fg->SaveModel("feature.index");
     }
 
     void detect(cv::Mat & imgDetect){
