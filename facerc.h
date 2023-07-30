@@ -2,7 +2,7 @@
 #include "FaceRecognition.h"
 #include "FeatureGroup.h"
 
-#include <QObject>
+#include <QThread>
 
 #include <memory>
 #include <iostream>
@@ -13,16 +13,18 @@
 
 #include <unistd.h>
 
-class FaceRC:public QObject{
+
+class FaceRC:public QThread{
 Q_OBJECT
 
 public:
     FaceRC(){
         fr = std::make_shared<FaceRecognition>();
         if (access("feature.index", F_OK ) != -1)
-            fg = std::make_shared<FeatureGroup>("feature.index", fr);
+            fg = std::make_shared<FeatureGroup>("feature.index", fr.get());
         else
-            fg = std::make_shared<FeatureGroup>(fr.GetFeatureDims(), fr);
+            fg = std::make_shared<FeatureGroup>(fr->GetFeatureDims(), fr.get());
+            running = 0;
     }
     void train(const std::vector<std::string> filenames){
         float **feat;
@@ -41,6 +43,7 @@ public:
         }
 
         fg->SaveModel("feature.index");
+        emit trained();
     }
 
     std::string detect(cv::Mat & imgDetect){
@@ -57,7 +60,7 @@ public:
 
         if (!fr->GetFeature(imgDetect, feat))
         {
-            return;
+            return "Unknown";
         }
 
         cv::Rect face_rect;
@@ -98,10 +101,27 @@ public:
         return name;
         //cv::imshow("DetectImage", img);
     }
+
+    void run() override{
+        while(1){
+            if(running){
+                train(this -> filenames);
+                running = 0;
+                
+            }
+        }
+    }
+public slots:
+    void startTrainning(const std::vector<std::string> filenames){
+        this -> filenames = filenames;
+        running = 1;
+    }
 signals:
     void detected(QString name);
     void trained();
 private:
     std::shared_ptr<FaceRecognition> fr;
     std::shared_ptr<FeatureGroup> fg;
+    int running;
+    std::vector<std::string> filenames;
 };

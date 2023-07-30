@@ -6,6 +6,7 @@
 
 #include <QMessageBox>
 #include <QDebug>
+#include<QDateTime>
 #include <QFileDialog>
 #include "dlgfaceinput.h"
 #include <iostream>
@@ -24,6 +25,9 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
                                           faceRC(new FaceRC())
 {
     ui->setupUi(this);
+    connect(faceRC, SIGNAL(trained()), this, SLOT(on_faceRC_trained()));
+    faceRC -> start();
+
 }
 
 MainWindow::~MainWindow()
@@ -66,7 +70,8 @@ void MainWindow::on_pushButton_trainFaces_clicked()
         std::cout << filenames[i] << std::endl;
     }
 
-    faceRC->train(filenams);
+    faceRC->startTrainning(filenames);
+    this -> setWindowTitle("start trainning [ "+ QDateTime::currentDateTime().toString("yyyy-MM-dd HH:mm:ss:zzz")+" ]");
 }
 
 void MainWindow::on_pushButton_clicked()
@@ -81,7 +86,7 @@ void MainWindow::on_pushButton_clicked()
     //    //img = cv::imread(fileName.toLatin1().data());
     //    img = cv::imread(std::string((const char *)fileName.toLocal8Bit()));
     cv::Mat imgDetect = img;
-    QString name;
+    //QString name;
     if (!imgDetect.data)
     {
         QMessageBox msgBox;
@@ -237,6 +242,7 @@ void MainWindow::on_pushButton_2_clicked()
     }
 }
 
-void on_faceRC_trained()
+void MainWindow::on_faceRC_trained()
 {
+    this -> setWindowTitle("trained [ "+ QDateTime::currentDateTime().toString("yyyy-MM-dd HH:mm:ss:zzz")+" ]");
 }

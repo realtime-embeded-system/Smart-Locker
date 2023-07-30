@@ -15,7 +15,9 @@ add_executable(${PROJECT_NAME}
             mainwindow.cpp 
             FaceRecognition.cpp 
             featuregroup.cpp 
-            dlgfaceinput.cpp )
+            dlgfaceinput.cpp
+	   facerc.h
+	  facerc.cpp )
 
 target_link_libraries(${PROJECT_NAME}
             -lopencv_core 
