@@ -16,17 +16,17 @@ add_executable(${PROJECT_NAME}
             FaceRecognition.cpp 
             featuregroup.cpp 
             dlgfaceinput.cpp
-	   facerc.h
-	  facerc.cpp )
+            device.cpp
+	        facerc.cpp )
 
 target_link_libraries(${PROJECT_NAME}
             -lopencv_core 
             -lopencv_highgui 
             -lopencv_imgproc 
-            -lwiringPi 
+            -lpigpio
             -lseeta_facedet_lib
-	    -lseeta_fa_lib
-	    -lviplnet
+	        -lseeta_fa_lib
+	        -lviplnet
 	  
             Qt5::Widgets
             )       
