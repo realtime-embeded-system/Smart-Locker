@@ -2,15 +2,15 @@
 
 
 Device::Device(){
-    
-    wiringPiSetup();
-    pinMode(face1_PIN, OUTPUT);
-    pinMode(face2_PIN, OUTPUT);
-    pinMode(face3_PIN, OUTPUT);
-    pinMode(face4_PIN, OUTPUT);
+    if (gpioInitialise() < 0) exit();
+    gpioSetMode(face1_PIN, PI_OUTPUT);
+    gpioSetMode(face2_PIN, PI_OUTPUT);
+    gpioSetMode(face3_PIN, PI_OUTPUT);
+    gpioSetMode(face4_PIN, PI_OUTPUT);
+
 }
 
 void Device::open(int pin_index){
-    digitalWrite(pin_index, HIGH);
-    digitalWrite(pin_index, LOW);
+    gpioWrite(pin_index, PI_HIGH);
+    gpioWrite(pin_index, PI_LOW);
 }

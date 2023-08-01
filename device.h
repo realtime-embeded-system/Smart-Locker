@@ -1,6 +1,7 @@
 #pragma once
 
-#include <wiringPi.h>
+#include <pigpio.h>
+
 #define face1_PIN 24
 #define face2_PIN 25
 #define face3_PIN 27
