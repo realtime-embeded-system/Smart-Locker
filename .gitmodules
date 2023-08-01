@@ -1,0 +1,3 @@
+[submodule "3rdparty/SeetaFaceEngine"]
+	path = 3rdparty/SeetaFaceEngine
+	url = https://github.com/seetaface/SeetaFaceEngine.git
