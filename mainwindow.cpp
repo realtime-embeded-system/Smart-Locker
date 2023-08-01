@@ -80,6 +80,9 @@ void MainWindow::on_pushButton_clicked()
 
 
     std::string name = faceRC->detect(imgDetect);
+    ui->lineEdit_name->setText(QString::fromStdString(name));
+    QImage qimg = MatToQImage(imgDetect);
+    ui->label_image->setPixmap(QPixmap::fromImage(qimg));
     if (name == "Unknown")
     {
         

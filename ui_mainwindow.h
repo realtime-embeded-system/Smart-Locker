@@ -244,7 +244,7 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "\344\272\272\350\204\270\350\257\206\345\210\253\347\263\273\347\273\237", Q_NULLPTR));
+        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Face Recognition System", Q_NULLPTR));
         groupBox_3->setTitle(QApplication::translate("MainWindow", "image", Q_NULLPTR));
         label_image->setText(QString());
         pushButton_cameraOpen->setText(QApplication::translate("MainWindow", "open camera", Q_NULLPTR));
