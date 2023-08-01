@@ -48,4 +48,4 @@ sudo ./faceReconiton
 7. Restart the program, and the program can now recognize your face.
 
 ## Vedio
-[![Watch the video](https://raw.github.com/GabLeRoux/WebMole/master/ressources/WebMole_Youtube_Video.png)](https://www.youtube.com/watch?v=tpFT4W4TO1w)
+[![Watch the video](https://github.com/realtime-embeded-system/Smart-Locker/blob/main/picture.png)](https://www.youtube.com/watch?v=tpFT4W4TO1w)
