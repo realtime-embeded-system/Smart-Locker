@@ -17,7 +17,8 @@ Note : Seeta_ fr_ The v1.0 file is too large to be directly uploaded to GitHub, 
 mkdir build
 cd build
 make
-./faceReconiton
+mkdir images
+sudo ./faceReconiton
 ```
 
 
