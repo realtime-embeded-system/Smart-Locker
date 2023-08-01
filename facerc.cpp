@@ -83,7 +83,7 @@ void FaceRC::train(const std::vector<std::string> filenames){
         //cv::imshow("DetectImage", img);
     }
 
-    void FaceRC::run() override{
+    void FaceRC::run() {
         while(1){
             if(running){
                 train(this -> filenames);
