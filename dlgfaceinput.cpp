@@ -97,12 +97,12 @@ void dlgFaceInput::on_pushButton_inpput_clicked()
 
     if(imageName.isEmpty())
     {
-        QMessageBox::warning(NULL, QStringLiteral("提示"), "姓名为空", QMessageBox::Yes);
+        QMessageBox::warning(NULL, QStringLiteral("warning"), "The name is empty!", QMessageBox::Yes);
         return;
     }
     QString path = "./images/";
 
     cv::imwrite(path.append(imageName).append(".jpg").toStdString(),img);
-    QMessageBox::information(NULL, QStringLiteral("提示"), "录入成功", QMessageBox::Yes);
+    QMessageBox::information(NULL, QStringLiteral("info"), "Success!", QMessageBox::Yes);
     close();
 }

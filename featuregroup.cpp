@@ -13,7 +13,7 @@ FeatureGroup::FeatureGroup(string model_file, FaceRecognition* fr)
     int size;
     float* new_feat;
     char* buffer = new char[1000];
-    //从模型读取数据
+    //read data from model file
     file >> size;
     file >> this->feat_dims;
     for (int i = 0; i < size; i++)
@@ -46,7 +46,7 @@ bool FeatureGroup::AddFeature(float* feat, string filename)
 {
     Feature tmp;
     float* new_feat = new float[this->feat_dims];
-    //memcpy(new_feat, feat, sizeof(new_feat) * this->feat_dims);// 这句话执行有问题，改成下面的循环
+    //memcpy(new_feat, feat, sizeof(new_feat) * this->feat_dims);
     for (int i = 0; i < this->feat_dims; i++)
     {
         new_feat[i] = feat[i];
@@ -61,9 +61,9 @@ bool FeatureGroup::SaveModel(string model_file)
 {
     std::ofstream file;
     file.open(model_file);
-    file << int(this->features.size()) << std::endl; //先输出特征的个数
-    file << this->feat_dims << std::endl; //再输出特征的维数
-    //依次写入数据
+    file << int(this->features.size()) << std::endl; 
+    file << this->feat_dims << std::endl; 
+    
     for (int i = 0; i < int(this->features.size()); i++)
     {
         file << this->features[i].filename << std::endl;
@@ -102,7 +102,7 @@ bool FeatureGroup::FindTopK(int k, float* feat, std::vector<Feature>& result)
 
 }
 
-FeatureGroup::~FeatureGroup()  //如果出错，再回来修改
+FeatureGroup::~FeatureGroup()  
 {
     for (int i = 0; i < int(this->features.size()); i++)
     {
