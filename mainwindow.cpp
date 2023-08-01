@@ -100,7 +100,7 @@ void MainWindow::on_pushButton_clicked()
         {
             device -> open(face3_PIN);
 
-        };
+        }
         else if (name == "hlt")
         {
             device -> open(face4_PIN);
