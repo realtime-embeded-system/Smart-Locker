@@ -49,3 +49,4 @@ sudo ./faceReconiton
 
 ## Vedio
 https://www.youtube.com/watch?v=tpFT4W4TO1w
+[![Watch the video](https://raw.github.com/GabLeRoux/WebMole/master/ressources/WebMole_Youtube_Video.png)](http://youtu.be/vt5fpE0bzSY)
