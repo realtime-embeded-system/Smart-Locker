@@ -9,7 +9,7 @@ Note : Seeta_ fr_ The v1.0 file is too large to be directly uploaded to GitHub, 
 | Name | Role |
 | ---- |  ---- |
 | LittleYuriCat  | Face train and Face predict module and gpio module |
-| realtime-embedded  | manage program process |
+| Yuyang Peng  | manage program process |
 | monkeyDkong  | control device open module |
 | liniming  | Software Engineer |
 ## How to build
