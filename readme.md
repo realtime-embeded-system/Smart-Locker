@@ -47,3 +47,5 @@ sudo ./faceReconiton
 
 7. Restart the program, and the program can now recognize your face.
 
+## Vedio
+https://www.youtube.com/watch?v=tpFT4W4TO1w
