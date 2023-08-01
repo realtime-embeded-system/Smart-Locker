@@ -6,6 +6,7 @@
 #include <QProcess>
 
 #include "facerc.h"
+#include "device.h"
 
 namespace Ui {
 class MainWindow;
@@ -47,6 +48,7 @@ private:
 
     QProcess * m_process;
     FaceRC * faceRC;
+    Device * device;
 };
 
 #endif // MAINWINDOW_H

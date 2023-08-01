@@ -10,11 +10,7 @@
 #include <QFileDialog>
 #include "dlgfaceinput.h"
 #include <iostream>
-#include <wiringPi.h>
-#define face1_PIN 24
-#define face2_PIN 25
-#define face3_PIN 27
-#define face4_PIN 28
+
 
 #include <QInputDialog>
 
@@ -22,7 +18,8 @@ extern QImage MatToQImage(const cv::Mat &mat);
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
                                           ui(new Ui::MainWindow),
-                                          faceRC(new FaceRC())
+                                          faceRC(new FaceRC()),
+                                          device(new Device)
 {
     ui->setupUi(this);
     connect(faceRC, SIGNAL(trained()), this, SLOT(on_faceRC_trained()));
@@ -76,11 +73,7 @@ void MainWindow::on_pushButton_trainFaces_clicked()
 
 void MainWindow::on_pushButton_clicked()
 {
-    wiringPiSetup();
-    pinMode(face1_PIN, OUTPUT);
-    pinMode(face2_PIN, OUTPUT);
-    pinMode(face3_PIN, OUTPUT);
-    pinMode(face4_PIN, OUTPUT);
+    
     //    cv::Mat img;
     //    QString fileName = QFileDialog::getOpenFileName(this,tr("Open Image"),".",tr("Image File(*.png *.jpg *.jpeg *.bmp)"));
     //    //img = cv::imread(fileName.toLatin1().data());
@@ -168,24 +161,28 @@ void MainWindow::on_pushButton_clicked()
     {
         if (name == "lzy")
         {
-            digitalWrite(face1_PIN, HIGH);
-            digitalWrite(face1_PIN, LOW);
-        };
-        if (name == "ljr")
+            device -> open(face1_PIN);
+            // digitalWrite(face1_PIN, HIGH);
+            // digitalWrite(face1_PIN, LOW);
+        }
+        else if (name == "ljr")
         {
-            digitalWrite(face2_PIN, HIGH);
-            digitalWrite(face2_PIN, LOW);
-        };
-        if (name == "pyy")
+            device -> open(face2_PIN);
+            // digitalWrite(face2_PIN, HIGH);
+            // digitalWrite(face2_PIN, LOW);
+        }
+        else if (name == "pyy")
         {
-            digitalWrite(face3_PIN, HIGH);
-            digitalWrite(face3_PIN, LOW);
+            device -> open(face3_PIN);
+            // digitalWrite(face3_PIN, HIGH);
+            // digitalWrite(face3_PIN, LOW);
         };
-        if (name == "hlt")
+        else if (name == "hlt")
         {
-            digitalWrite(face4_PIN, HIGH);
-            digitalWrite(face4_PIN, LOW);
-        };
+            device -> open(face4_PIN);
+            // digitalWrite(face4_PIN, HIGH);
+            // digitalWrite(face4_PIN, LOW);
+        }
     }
 }
 
