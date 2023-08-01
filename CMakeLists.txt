@@ -2,9 +2,6 @@ project(faceRecogniztion)
 
 find_package(OpenCV REQUIRED)
 
-add_subdirectory(SeetaFaceEngine/FaceAlignment)
-add_subdirectory(SeetaFaceEngine/FaceDetection)
-add_subdirectory(SeetaFaceEngine/FaceIdentification)
 
 find_package(Qt5 COMPONENTS Widgets  REQUIRED)
 set(CMAKE_AUTOMOC ON)
