@@ -34,9 +34,6 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_trainFaces_clicked()
 {
-    wiringPiSetup();
-    pinMode(23, OUTPUT);
-    pinMode(22, OUTPUT);
     std::vector<string> filenames;
     QString imagePath = "./images/";
 
