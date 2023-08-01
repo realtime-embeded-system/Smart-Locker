@@ -9,7 +9,7 @@ Note : Seeta_ fr_ The v1.0 file is too large to be directly uploaded to GitHub, 
 | Name | Role |
 | ---- |  ---- |
 | LittleYuriCat  | Face train and Face predict module and gpio module |
-| Yuyang Peng  | manage program process |
+| Yuyang Peng（2429326p）  | manage program process |
 | monkeyDkong  | control device open module |
 | liniming  | Software Engineer |
 ## How to build
