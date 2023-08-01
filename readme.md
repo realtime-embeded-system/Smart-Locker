@@ -8,10 +8,10 @@ Note : Seeta_ fr_ The v1.0 file is too large to be directly uploaded to GitHub, 
 ## Project Contributors
 | Name | Role |
 | ---- |  ---- |
-| Zongyu Li(2812080l)  | Face train and Face predict module and gpio module |
-| Yuyang Peng（2429326p）  | manage program process |
-| Lintao Hu(2810636h)  | control device open module |
-| Jiarui Liu(2828920l)  | Software Engineer |
+| Zongyu Li (2812080l)  | Face train and Face predict module and gpio module |
+| Yuyang Peng (2429326p)  | manage program process |
+| Lintao Hu (2810636h)  | control device open module |
+| Jiarui Liu (2828920l)  | Software Engineer |
 ## How to build
 ```lang=shell
 mkdir build
